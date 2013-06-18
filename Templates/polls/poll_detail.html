@@ -1,7 +1,7 @@
 <h1>{{ object.question }}</h1>
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-
+John
 <form action="/polls/{{ object.id }}/vote/" method="post">
   {% csrf_token %}
   {% for choice in object.choice_set.all %}
