@@ -25,7 +25,7 @@ class PollViewTests(TestCase):
         self.assertQuerysetEqual(response.context['latest_poll_list'], [])
 
     def test_index_view_with_a_past_poll(self):
-        vreate_poll(question="Past poll.", days=-30)
+        create_poll(question="Past poll.", days=-30)
         response = self.client.get(reverse('polls:index'))
         self.assertQuerysetEqual(
             response.context['latest_poll_list'],
@@ -42,7 +42,7 @@ class PollViewTests(TestCase):
         create_poll(question="Past poll.", days=-30)
         create_poll(question="Future poll.", days = 30)
         response = self.client.get(reverse('polls:index'))
-        self.assertQueryEqual(
+        self.assertQuerysetEqual(
             response.context['latest_poll_list'],
             ['<Poll: Past poll.>']
         )
