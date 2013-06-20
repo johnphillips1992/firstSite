@@ -5,7 +5,8 @@ from polls import views
 #from django.contrib import admin
 #admin.autodiscover()
 
-urlpatterns = patterns('polls.views',
+urlpatterns = patterns('',
+        url(r'^polls/', include('polls.urls', namespace="polls")),
         url(r'^$', views.IndexView.as_view(), name='index'),
         url(r'^(?P<pk>\d+)/$', views.DetailView.as_view(), name='detail'),
         url(r'^(?P<pk>\d+)/results/$', views.ResultsView.as_view(), name='results'),
