@@ -1,5 +1,6 @@
 from django.db import models
 import datetime
+from django.utils import timezone
 
 class Poll(models.Model):
     question = models.CharField(max_length=200)
@@ -9,6 +10,9 @@ class Poll(models.Model):
     def was_published_today(self):
         return self.pub_date.date() == datetime.date.today()
     was_published_today.short_description = 'Published today?'
+    def was_published_recently(self):
+        now = timezone.now()
+        return now - datetime.timedelta(days=1) <= self.pub_date < now
 
 class Choice(models.Model):
     poll = models.ForeignKey(Poll)
