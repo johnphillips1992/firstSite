@@ -1,18 +1,13 @@
-from django.conf.urls.defaults import *
-from polls.models import Poll
+from django.conf.urls.defaults import patterns, url
+from polls import views
 
 # Uncomment the next two lines to enable the admin:
-from django.contrib import admin
-admin.autodiscover()
+#from django.contrib import admin
+#admin.autodiscover()
 
-info_dict = {
-        'queryset': Poll.objects.all(),
-}
-
-urlpatterns = patterns('',
-        (r'^$', 'django.views.generic.list_detail.object_list', info_dict),
-        (r'^(?P<object_id>\d+)/$', 'django.views.generic.list_detail.object_detail', info_dict),
-        url(r'^(?P<object_id>\d+)/results/$', 'django.views.generic.list_detail.object_detail', dict(info_dict, template_name='polls/results.html'), 'poll_results'),
-        (r'^(?P<poll_id>\d+)/vote/$', 'polls.views.vote'),
-        (r'^admin/', include(admin.site.urls)),
-)
+urlpatterns = patterns('polls.views',
+        url(r'^$', views.IndexView.as_view(), name='index'),
+        url(r'^(?P<pk>\d+)/$', views.DetailView.as_view(), name='detail'),
+        url(r'^(?P<pk>\d+)/results/$', views.ResultsView.as_view(), name='results'),
+        url(r'^(?P<poll_id>\d+)/vote/$', views.vote, name='vote'),
+        )

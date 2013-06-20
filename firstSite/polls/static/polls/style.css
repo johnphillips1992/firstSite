@@ -1,0 +1,7 @@
+body {
+  background: white url("images/horizontal.gif") repeat-x right bottom;
+}
+
+li a {
+  color: green;
+}
