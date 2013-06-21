@@ -7,7 +7,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div class = "main">
   <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
@@ -16,7 +15,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="brand" href="/">A&M</a>
+        <a class="brand" href="http://www.tamu.edu">A&M</a>
         <div class="nav-collapse collapse">
           <ul class="nav">
             <li class="active">
@@ -31,6 +30,7 @@
     </div>
   </div>
 
+<div class = "main">
 
   <div class="header">
     <h1>
@@ -52,4 +52,32 @@
   {% endif %}
   {% endblock %}
   </div>
+  <br>
+  <br>
+  <div class="span4 secondary">
+      <h3>
+        {% block secondary-heading %}
+          Heading
+        {% endblock %}
+      </h2>
+      <p>
+      {% block secondary-text %}
+        lakdsf;aj;dlkafj;lksjd;<br>flkja;lksdjf;lakjsd<br>;flkja;kldsjf;lkajsd;<br>lkfj;alksdjf;lkjasldkfjlajsd;flkj
+      {% endblock %}
+      </p>
+  </div>
 </div>
+<br>
+<div class="footer">
+  <address>
+    <small>
+    John Phillips<br>
+    401 University Blvd #908<br>
+    College Station, TX 77480<br>
+  </small>
+  </address>
+</div>
+
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="{% static 'polls/bootstrap.js' %}"></script>

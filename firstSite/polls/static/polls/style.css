@@ -25,12 +25,46 @@ li a {
     box-shadow: 0 0 40px #000000;
     width:768px;
   }
+  .header {
+  background: #dddddd;
+  width: 100%;
+  }
 }
 
 @media (min-width: 979px){
   .main {
-    padding-top: 40px;
-    width: 979px;
+    width: 960px;
+    margin-top: 60px;
+
   }
 }
 
+.header h1 {
+  padding-left: 3%;
+  padding-top: 4px;
+  padding-bottom: 2px;
+}
+
+.navbar {
+  box-shadow: 0 0 20px #000000;
+}
+
+@media (min-width: 1300px){
+  .main {
+    width: 1300px;
+  }
+}
+
+.footer {
+  color: white;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+@media (max-width: 768px){
+  .footer {
+    color: #332c2c;
+  }
+}
