@@ -1,19 +1,31 @@
 {% load staticfiles %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+
 <link rel="stylesheet" type="text/css" href="{% static 'polls/bootstrap.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'polls/bootstrap-responsive.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 
-<div class = "main text-center">
-{% block content %}
-{% if object_list %}
-    <ul>
-    {% for object in object_list %}
-        <li><a href="{{ object.id }}/">{{ object.question }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
-{% endblock %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div class = "main offset2 span8">
+  <header class="header">
+    <h1>
+      {% block header %}
+        Polls
+      {% endblock %}
+    </h1>
+  </header>
+  <div class="content">
+  {% block content %}  
+  {% if object_list %}
+      <ul>
+      {% for object in object_list %}
+          <li><a href="{{ object.id }}/">{{ object.question }}</a></li>
+      {% endfor %}
+     </ul>
+  {% else %}
+      <p>No polls are available.</p>
+  {% endif %}
+  {% endblock %}
+  </div>
 </div>

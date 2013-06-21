@@ -1,8 +1,10 @@
-{% extends "polls/index.html" %}
+{% extends "polls/poll_detail.html" %}
+
+{% block header %}
+  {{ block.super }}
+{% endblock %}
 
 {% block content %}
-
-<h1>{{ object.question }}</h1>
 
 <ul>
 {% for choice in object.choice_set.all %}

@@ -5,3 +5,10 @@ body {
 li a {
   color: green;
 }
+
+@media (min-width: 768px){
+  .main {
+    background: orange;
+    padding: 0 10px;
+  }
+}
