@@ -1,7 +1,11 @@
 {% load staticfiles %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'polls/bootstrap.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'polls/bootstrap-responsive.css' %}" />
 
+<div class = "main text-center">
+{% block content %}
 {% if object_list %}
     <ul>
     {% for object in object_list %}
@@ -11,3 +15,5 @@
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+{% endblock %}
+</div>

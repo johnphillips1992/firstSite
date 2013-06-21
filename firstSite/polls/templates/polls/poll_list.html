@@ -1,3 +1,6 @@
+{% extends "polls/index.html" %}
+
+{% block content %}
 {% if object_list %}
     <ul>
     {% for object in object_list %}
@@ -7,3 +10,5 @@
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+
+{% endblock %}

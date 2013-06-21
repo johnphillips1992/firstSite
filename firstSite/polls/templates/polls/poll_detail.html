@@ -1,3 +1,6 @@
+{% extends "polls/index.html" %}
+{% block content %}
+
 <h1>{{ object.question }}</h1>
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
@@ -9,3 +12,4 @@
   {% endfor %}
   <input type="submit" value="Vote" />
 </form>
+{% endblock %}
