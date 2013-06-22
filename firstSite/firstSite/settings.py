@@ -12,7 +12,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/Users/johnphillips/Documents/Django/firstSite/sqlite3.db',                      # Or path to database file if using sqlite3.
+        'NAME': '/Users/Dev/Documents/www/firstSite/sqlite3.db',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
@@ -112,6 +112,7 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     "/Users/johnphillips/Documents/Django/fistSite/firstSite/polls",
+    "/Users/Dev/Documents/www/firstSite/firstSite/polls",
     )
 
 INSTALLED_APPS = (

@@ -1,7 +1,15 @@
 {% extends "polls/index.html" %}
 
+{% block heading1 %}
+  {{ object.question }}
+{% endblock %}
+
 {% block header %}
   {{ object.question }}
+{% endblock %}
+
+{% block results %}
+
 {% endblock %}
 
 {% block content %}
@@ -12,8 +20,8 @@
 
   {% for choice in object.choice_set.all %}
        <label class="radio" for="choice{{ forloop.counter }}">
-       {{ choice.choice }}
-       <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+         {{ choice.choice }}
+         <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
        </label>
   {% endfor %}
   <input class="btn-primary" type="submit" value="Vote" />

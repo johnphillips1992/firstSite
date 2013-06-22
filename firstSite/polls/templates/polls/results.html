@@ -5,12 +5,14 @@
 {% endblock %}
 
 {% block content %}
-
+{% block results1 %}
 <ul>
 {% for choice in object.choice_set.all %}
   <li>{{ choice.choice }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
 {% endfor %}
 </ul>
+
+{% endblock %}
 
 <a href="/{{ object.id }}/">Vote again?</a>
 {% endblock %}

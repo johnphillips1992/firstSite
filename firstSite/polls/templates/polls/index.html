@@ -40,7 +40,7 @@
     </h1>
   </div>
   <div class="content">
-  {% block content %}  
+  {% block content %}
   {% if object_list %}
       <ul>
       {% for object in object_list %}
@@ -55,14 +55,20 @@
   <br>
   <br>
   <div class="row-fluid">
-  <div class="span4 secondary">
-      <h3>
-        Heading1
-      </h3>
-      <p>
-        lakdsf;aj;dlkafj;lksjd;<br>flkja;lksdjf;lakjsd<br>;flkja;kldsjf;lkajsd;<br>lkfj;alksdjf;lkjasldkfjlajsd;flkj
-      </p>
-  </div>
+    <a href="/1">
+      <div class="span4 secondary">
+        <h3>
+          {% block heading1 %}
+            Heading1
+          {% endblock %}
+        </h3>
+        <p>
+          {% block results1 %}
+            lakdsf;aj;dlkafj;lksjd;<br>flkja;lksdjf;lakjsd<br>;flkja;kldsjf;lkajsd;<br>lkfj;alksdjf;lkjasldkfjlajsd;flkj
+          {% endblock %}
+        </p>
+      </div>
+    </a>
   <div class="span4 secondary">
     <h3>
       Heading2
