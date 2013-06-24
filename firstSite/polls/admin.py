@@ -1,4 +1,4 @@
-from polls.models import Poll
+from polls.models import Poll, Article
 from polls.models import Choice
 from django.contrib import admin
 
@@ -17,4 +17,11 @@ class PollAdmin(admin.ModelAdmin):
     search_fields = ['question']
     date_hierarchy = 'pub_date'
 
+class ArticleAdmin(admin.ModelAdmin):
+    fieldsets = [
+            (None,               {'fields': ['heading']}),
+            ('Content',          {'fields': ['content']}),
+    ]
+
 admin.site.register(Poll, PollAdmin)
+admin.site.register(Article, ArticleAdmin)

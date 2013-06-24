@@ -21,3 +21,9 @@ class Choice(models.Model):
     def __unicode__(self):
         return self.choice
 
+class Article(models.Model):
+    heading = models.CharField(max_length=20)
+    content = models.CharField(max_length=200)
+    def __unicode__(self):
+        return self.heading
+
