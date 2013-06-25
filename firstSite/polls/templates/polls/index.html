@@ -55,54 +55,23 @@
   <br>
   <br>
   <div class="row-fluid">
-  <div class="span4 secondary">
+    {% for object in object_list %}
+     <div class="span4 secondary">
       <h3>
-        {{ Poll.objects.filter(question = "What's up?") }}
+          {{ object.question }}
       </h3>
       <p>
-        lakdsf;aj;dlkafj;lksjd;<br>flkja;lksdjf;lakjsd<br>;flkja;kldsjf;lkajsd;<br>lkfj;alksdjf;lkjasldkfjlajsd;flkj
+          {% for choice in object.choice_set.all %}
+            {{ choice.choice }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}<br>
+          {% endfor %}
       </p>
-  </div>
-  <div class="span4 secondary">
-    <h3>
-      Heading2
-    </h3>
-    <p>
-      lakdsf;aj;dlkafj;lksjd;<br>flkja;lksdjf;lakjsd<br>;flkja;kldsjf;lkajsd;<br>lkfj;alksdjf;lkjasldkfjlajsd;flkj
-    </p>
-  </div>
-  <div class="span4 secondary">
-    <h3>
-      Heading3
-    </h3>
-    <p>
-      lakdsf;aj;dlkafj;lksjd;<br>flkja;lksdjf;lakjsd<br>;flkja;kldsjf;lkajsd;<br>lkfj;alksdjf;lkjasldkfjlajsd;flkj
-    </p>
+     </div>
+    {% endfor %}
   </div>
 
-</div>
-
-  <div class="row-fluid">
-  <div class="span6 secondary">
-      <h3>
-        Heading4
-      </h3>
-      <p>
-        lakdsf;aj;dlkafj;lksjd;<br>flkja;lksdjf;lakjsd<br>;flkja;kldsjf;lkajsd;<br>lkfj;alksdjf;lkjasldkfjlajsd;flkj
-      </p>
-  </div>
-  <div class="span6 secondary">
-    <h3>
-      Heading5
-    </h3>
-    <p>
-      lakdsf;aj;dlkafj;lksjd;<br>flkja;lksdjf;lakjsd<br>;flkja;kldsjf;lkajsd;<br>lkfj;alksdjf;lkjasldkfjlajsd;flkj
-    </p>
-  </div>
-  </div>
-
-  </div>
-
+ <br>
+ <br>
+ <br>
 </div>
 <br>
 <div class="footer">
