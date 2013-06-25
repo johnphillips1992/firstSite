@@ -71,8 +71,20 @@ li a {
 .secondary {
   text-align: center;
   transition: background 0.32s ease-in-out;
+  height: 175px;
+  border-radius: 20px;
 }
 
 .secondary:hover {
   background: #dddddd;
+}
+
+.pollsRow {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pollsRow a{
+  text-decoration: none;
+  color: black;
 }

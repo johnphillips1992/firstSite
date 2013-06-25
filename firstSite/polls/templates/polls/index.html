@@ -42,11 +42,7 @@
   <div class="content">
   {% block content %}  
   {% if object_list %}
-      <ul>
-      {% for object in object_list %}
-          <li><a href="{{ object.id }}/">{{ object.question }}</a></li>
-      {% endfor %}
-     </ul>
+      
   {% else %}
       <p>No polls are available.</p>
   {% endif %}
@@ -54,9 +50,10 @@
   </div>
   <br>
   <br>
-  <div class="row-fluid">
+  <div class="row-fluid pollsRow">
     {% for object in object_list %}
-     <div class="span4 secondary">
+    <div class="span4 secondary">
+      <a  href="/{{object.id }}/">
       <h3>
           {{ object.question }}
       </h3>
@@ -65,7 +62,12 @@
             {{ choice.choice }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}<br>
           {% endfor %}
       </p>
-     </div>
+      </a>
+    </div>
+    {% if forloop.counter|divisibleby:3 %}
+      </div>
+      <div class="row-fluid pollsRow">
+    {% endif %}
     {% endfor %}
   </div>
 
